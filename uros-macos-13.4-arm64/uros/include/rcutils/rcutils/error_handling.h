@@ -136,7 +136,7 @@ typedef struct rcutils_error_state_s
 } rcutils_error_state_t;
 
 // make sure our math is right...
-#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L && !defined(RCUTILS_AVOID_DYNAMIC_ALLOCATION)
+#if __STDC_VERSION__ >= 201112L && !defined(RCUTILS_AVOID_DYNAMIC_ALLOCATION)
 static_assert(
   sizeof(rcutils_error_string_t) == (
     RCUTILS_ERROR_STATE_MESSAGE_MAX_LENGTH +
